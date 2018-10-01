@@ -15,6 +15,12 @@ pipeline {
                 echo "${params.Greeting} World!"
             }
         }
+
+        parellel {
+            hosts.each {
+                
+            }
+        }
     }
 
 }
