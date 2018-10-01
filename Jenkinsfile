@@ -7,7 +7,10 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                def hosts = readYaml file: 'config/host.yml'
+                script {
+                    hosts = readYaml file: 'config/host.yml'
+                }
+                
                 echo "${hosts}"
                 echo "${params.Greeting} World!"
             }
