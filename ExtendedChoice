@@ -1,5 +1,6 @@
 node {
     stage("Example") {
         echo "${SERVICES}"
+        echo "${params.SERVICES}"
     }
 }
