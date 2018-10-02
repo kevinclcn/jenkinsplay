@@ -1,0 +1,12 @@
+node {
+    def hosts = readYaml file: 'config/host.yml'
+    def stages = [:]
+    hosts.each { h ->
+        stages[h.key] = {
+            stage("${h.key}") {
+                echo "${h.key} is ${h.value}"
+            }
+        }
+    }
+    parallel stages
+}

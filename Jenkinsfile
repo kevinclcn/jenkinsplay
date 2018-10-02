@@ -1,9 +1,6 @@
 pipeline {
     agent any
     
-    parameters {
-        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
-    }
     stages {
         stage('Example') {
             input {
@@ -14,7 +11,8 @@ pipeline {
                 }
             }
             steps {
-                echo "${params.Greeting} World!"
+                echo "${params.SERVICES}"
+                echo "${env.BRANCH_NAME}"
             }
         }
     }
