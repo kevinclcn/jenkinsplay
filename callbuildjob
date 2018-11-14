@@ -1,5 +1,5 @@
 node {
     stage('Example') {
-        build job:'try1', parameters:[string(name:'SERVICES', value:'app2')]
+        build job:'try1', parameters:[string(name:'SERVICES', value:'app2')] 
     } 
 }
